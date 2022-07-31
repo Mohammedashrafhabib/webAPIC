@@ -10,6 +10,6 @@ namespace webAPI.Application.Interfaces
 {
     public interface IproductService
     {
-        IEnumerable<productViewModel> GetProducts();
+        productViewModel GetProducts();
     }
 }
