@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\webAPI.Infra.Data\webAPI.Infra.Data.csproj" />
+    <ProjectReference Include="..\webAPI.Infra.Ioc\webAPI.Infra.Ioc.csproj" />
   </ItemGroup>
 
 </Project>
