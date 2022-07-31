@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using webAPI.Infra.Data.Context;
 using webAPI.Mvc.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +14,11 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<CompanyDBContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DBContext"));
 
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
