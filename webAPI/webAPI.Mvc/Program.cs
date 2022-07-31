@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using webAPI.Infra.Data.Context;
+using webAPI.Infra.Ioc;
 using webAPI.Mvc.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,10 +16,11 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<CompanyDBContext>(options =>
-{
+{ 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DBContext"));
 
 });
+RegisterServices(builder.Services);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -47,3 +49,8 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.Run();
+
+static void RegisterServices(IServiceCollection services)
+{
+    DependencyContainer.RegisterServices(services);
+}

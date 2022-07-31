@@ -10,4 +10,9 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\webAPI.Application\webAPI.Application.csproj" />
+    <ProjectReference Include="..\webAPI.Infra.Data\webAPI.Infra.Data.csproj" />
+  </ItemGroup>
+
 </Project>
