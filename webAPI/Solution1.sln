@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webAPI.Application", "webAPI.Application", "{DFD4390A-76A5-43CB-81F4-2B7312223AF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webAPI.Domain", "webAPI.Domain", "{1C6E3CF6-FB40-4559-B80C-A8373E8D1DFF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webAPI.Infra.Data", "webAPI.Infra.Data", "{92B185C6-7CEE-4BAD-8057-E7A98F2C8E96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webAPI.Infra.IoC", "webAPI.Infra.IoC", "{DB37CBD0-D60B-4FDF-9299-DF9931A689B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webAPI.UI.Mvc", "webAPI.UI.Mvc", "{E6C81FE1-37B3-4DD9-8598-8C02736C1498}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA479D14-B252-4DC3-9741-D715B1DE99C1}
+	EndGlobalSection
+EndGlobal
