@@ -10,5 +10,6 @@ namespace webAPI.Domain.Interfaces
     public interface IProductRepository
     {
         IEnumerable<Product> GetProducts();
+        IEnumerable<ProductOrderCategory> GetProductsOrderCategory();
     }
 }

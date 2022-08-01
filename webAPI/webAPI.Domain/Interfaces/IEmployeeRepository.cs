@@ -6,5 +6,6 @@ namespace webAPI.Domain.Interfaces
     {
         IEnumerable<Employee> GetEmployees();
         void AddEmployees(Employee employee);
+        IEnumerable<Employee> GetEmployeesByLevel();
     }
 }

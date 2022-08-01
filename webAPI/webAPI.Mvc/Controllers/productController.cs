@@ -10,7 +10,7 @@ namespace webAPI.Mvc.Controllers
     public class productController : Controller
     {
         private IProductOrderCategoryService _productService;
-       
+        private readonly static Semaphore _semaphore = new Semaphore(1, 1);
         public productController(IProductOrderCategoryService productOrderCategoryService)
         {
             _productService = productOrderCategoryService;
@@ -25,8 +25,11 @@ namespace webAPI.Mvc.Controllers
         [Route("/get")]
         public IActionResult Index()
         {
-            ProductOrderCategoryVeiwModel model=_productService.GetProduct();
             
+            _semaphore.WaitOne();
+
+            ProductOrderCategoryVeiwModel model=_productService.GetProduct();
+            _semaphore.Release();
             
 
             return View(model);

@@ -11,7 +11,7 @@ namespace webAPI.Infra.Data.Context
     {
         public  CompanyDBContext(DbContextOptions options) : base(options)
         {
-
+            
         }
         public DbSet<Product> products { get; set; }
         public DbSet<Order> orders { get; set; }

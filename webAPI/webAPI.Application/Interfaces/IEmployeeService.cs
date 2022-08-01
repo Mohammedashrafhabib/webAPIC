@@ -7,5 +7,6 @@ namespace webAPI.Application.Interfaces
     {
         EmployeeViewModel GetEmployee();
         void addEmployee(Employee employee);
+        EmployeeViewModel GetEmployeeByLevel();
     }
 }

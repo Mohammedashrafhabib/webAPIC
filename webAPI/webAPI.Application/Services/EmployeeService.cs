@@ -25,5 +25,13 @@ namespace webAPI.Application.Services
                 employees = _employeeRepository.GetEmployees()
             };
         }
+
+        public EmployeeViewModel GetEmployeeByLevel()
+        {
+            return new EmployeeViewModel()
+            {
+                employees = _employeeRepository.GetEmployeesByLevel()
+            };
+        }
     }
 }
