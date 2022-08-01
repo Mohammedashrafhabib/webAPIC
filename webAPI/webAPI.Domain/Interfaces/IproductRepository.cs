@@ -7,8 +7,8 @@ using webAPI.Domain.Models;
 
 namespace webAPI.Domain.Interfaces
 {
-    public interface IproductRepository
+    public interface IProductRepository
     {
-        IEnumerable<product> GetProducts();
+        IEnumerable<Product> GetProducts();
     }
 }

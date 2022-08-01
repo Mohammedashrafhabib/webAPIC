@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace webAPI.Domain.Models
 {
-    internal class Product_Category
+    public class Product_Category
     {
+        public int Id { get; set; }
+        public string Category { get; set; }
     }
 }

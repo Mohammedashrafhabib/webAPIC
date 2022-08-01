@@ -8,8 +8,8 @@ using webAPI.Domain.Models;
 
 namespace webAPI.Application.Interfaces
 {
-    public interface IproductService
+    public interface IProductService
     {
-        productViewModel GetProducts();
+        ProductViewModel GetProducts();
     }
 }

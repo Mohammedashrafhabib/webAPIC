@@ -7,8 +7,8 @@ using webAPI.Domain.Models;
 
 namespace webAPI.Application.ViewModels
 {
-    public class productViewModel
+    public class ProductViewModel
     {
-        public IEnumerable<product> products { get; set; }
+        public IEnumerable<Product> products { get; set; }
     }
 }

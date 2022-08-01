@@ -13,6 +13,9 @@ namespace webAPI.Infra.Data.Context
         {
 
         }
-        public DbSet<product> products { get; set; }
+        public DbSet<Product> products { get; set; }
+        public DbSet<Order> orders { get; set; }
+        public DbSet<Employee> employees { get; set; }
+        public DbSet<Product_Category> categories { get; set; }
     }
 }

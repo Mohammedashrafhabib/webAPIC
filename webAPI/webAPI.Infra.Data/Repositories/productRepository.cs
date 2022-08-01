@@ -9,14 +9,14 @@ using webAPI.Infra.Data.Context;
 
 namespace webAPI.Infra.Data.Repositories
 {
-    public class productRepository : IproductRepository
+    public class ProductRepository : IProductRepository
     {
         private CompanyDBContext _ctx;
-        public productRepository(CompanyDBContext context)
+        public ProductRepository(CompanyDBContext context)
         {
             _ctx = context;
         }
-        public IEnumerable<product> GetProducts()
+        public IEnumerable<Product> GetProducts()
         {
             return _ctx.products;
         }

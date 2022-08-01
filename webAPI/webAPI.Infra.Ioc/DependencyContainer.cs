@@ -16,9 +16,15 @@ namespace webAPI.Infra.Ioc
         public static void RegisterServices(IServiceCollection services)
         {
             //Appliction layer
-            services.AddScoped<IproductService, productService>();
+            services.AddScoped<IProductService, ProductService>();
+           // services.AddScoped<IEmployeeService, EmployeeService>();
+           // services.AddScoped<IOrderService, OrderService>();
+            //services.AddScoped<ICategoryService, CategoryService>();
             // infra.data layer
-            services.AddScoped<IproductRepository, productRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            //services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            //services.AddScoped<IOrderRepository, OrderRepository>();
+            //services.AddScoped<ICategoryRepository, CategoryRepository>();
         }
     }
 }

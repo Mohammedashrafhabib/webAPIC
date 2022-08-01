@@ -1,13 +1,14 @@
-﻿@model webAPI.Application.ViewModels.productViewModel
+﻿@model webAPI.Application.ViewModels.ProductViewModel
 <div class="container body-conent">
 	<div class="row product-content">
 		@foreach(var product in Model.products){
 			<div class="productname">
 				<span>@product.Name</span>
 			<div class="product-Description">
-				<span>@product.Description</span>
+				<span>@product.Category_Id</span>
 			</div>
 			</div>
+			
 		}
 
 	</div>

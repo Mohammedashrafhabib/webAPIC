@@ -9,16 +9,16 @@ using webAPI.Domain.Interfaces;
 
 namespace webAPI.Application.Services
 {
-    public class productService : IproductService
+    public class ProductService : IProductService
     {
-        private IproductRepository _productRepository;
-        public productService(IproductRepository repository)
+        private IProductRepository _productRepository;
+        public ProductService(IProductRepository repository)
         {
             _productRepository = repository;
         }
-        public productViewModel GetProducts()
+        public ProductViewModel GetProducts()
         {
-            return new productViewModel()
+            return new ProductViewModel()
             {
                 products = _productRepository.GetProducts()
             };
