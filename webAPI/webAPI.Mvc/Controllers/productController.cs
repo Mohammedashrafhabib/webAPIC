@@ -6,18 +6,35 @@ using webAPI.Application.ViewModels;
 namespace webAPI.Mvc.Controllers
 {
     //[Authorize]
+    [ApiController]
     public class productController : Controller
     {
-        private IProductService _productService;
-        public productController(IProductService iproductService)
+        private IProductOrderCategoryService _productService;
+       
+        public productController(IProductOrderCategoryService productOrderCategoryService)
         {
-            _productService = iproductService;
+            _productService = productOrderCategoryService;
+           
         }
+        /// <summary>
+        ///  bbjb.
+        /// </summary>
+        /// 
+        /// <returns>kmk</returns>
+        [HttpGet]
+        [Route("/get")]
         public IActionResult Index()
         {
-            ProductViewModel model=_productService.GetProducts();
+            ProductOrderCategoryVeiwModel model=_productService.GetProduct();
+            
+            
 
             return View(model);
         }
+       
+
+
     }
 }
+
+

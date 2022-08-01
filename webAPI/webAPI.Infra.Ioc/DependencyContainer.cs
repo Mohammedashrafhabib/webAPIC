@@ -17,14 +17,18 @@ namespace webAPI.Infra.Ioc
         {
             //Appliction layer
             services.AddScoped<IProductService, ProductService>();
-           // services.AddScoped<IEmployeeService, EmployeeService>();
-           // services.AddScoped<IOrderService, OrderService>();
-            //services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IEmployeeService, EmployeeService>();
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            
+            
+            services.AddScoped<IProductOrderCategoryService, ProductOrderCategoryService>();
+           
             // infra.data layer
             services.AddScoped<IProductRepository, ProductRepository>();
-            //services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-            //services.AddScoped<IOrderRepository, OrderRepository>();
-            //services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using webAPI.Application.Interfaces;
 using webAPI.Application.ViewModels;
 using webAPI.Domain.Interfaces;
+using webAPI.Domain.Models;
 
 namespace webAPI.Application.Services
 {
@@ -11,6 +12,12 @@ namespace webAPI.Application.Services
         {
             _employeeRepository = repository;
         }
+
+        public void addEmployee(Employee employee)
+        {
+            _employeeRepository.AddEmployees(employee);
+        }
+
         public EmployeeViewModel GetEmployee()
         {
             return new EmployeeViewModel()

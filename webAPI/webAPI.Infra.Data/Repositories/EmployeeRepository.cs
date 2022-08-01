@@ -11,9 +11,18 @@ namespace webAPI.Infra.Data.Repositories
         {
             _ctx = context;
         }
+
+        public void AddEmployees(Employee employee)
+        {
+            _ctx.employees.Add(employee);
+            _ctx.SaveChanges();
+        }
+
         public IEnumerable<Employee> GetEmployees()
         {
+            
             return _ctx.employees;
         }
+
     }
 }
