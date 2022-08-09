@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace webAPI.Domain.Models
 {
-    public class Order
+    internal class Flat
     {
-        public int Id { get; set; }
-        public int Product_Id { get; set; }
-        public int Product_Quantity { get; set; }
-
     }
 }

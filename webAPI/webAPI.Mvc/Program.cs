@@ -15,16 +15,16 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<CompanyDBContext>(options =>
-{ 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DBContext"));
+//builder.Services.AddDbContext<CompanyDBContext>(options =>
+//{ 
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("DBContext"));
 
-});
+//});
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-RegisterServices(builder.Services);
+//RegisterServices(builder.Services);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
