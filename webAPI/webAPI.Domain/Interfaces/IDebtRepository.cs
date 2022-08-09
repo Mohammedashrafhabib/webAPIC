@@ -9,5 +9,7 @@ namespace webAPI.Domain.Interfaces
 {
     public interface IDebtRepository : IRepository<Debt>
     {
+        IEnumerable<Debt> GetAllFlatDebt(int id);
+        IEnumerable<Debt> GetDueDebts(int id);
     }
 }

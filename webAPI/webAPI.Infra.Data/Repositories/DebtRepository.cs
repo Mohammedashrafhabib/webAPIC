@@ -16,5 +16,15 @@ namespace webAPI.Infra.Data.Repositories
         {
             _ctx = context;
         }
+
+        public IEnumerable<Debt> GetAllFlatDebt(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Debt> GetDueDebts(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
