@@ -2,8 +2,8 @@
 
 namespace webAPI.Domain.Interfaces
 {
-    public interface ICategoryRepository
+    public interface ICategoryRepository:IRepository<Product_Category>
     {
-        IEnumerable<Product_Category> GetCategories();
+        
     }
 }

@@ -4,16 +4,13 @@ using webAPI.Infra.Data.Context;
 
 namespace webAPI.Infra.Data.Repositories
 {
-    public class OrderRepository : IOrderRepository
+    public class OrderRepository : Repository<Order>, IOrderRepository
     {
         private CompanyDBContext _ctx;
-        public OrderRepository(CompanyDBContext context)
+        public OrderRepository(CompanyDBContext context):base(context)
         {
             _ctx = context;
         }
-        public IEnumerable<Order> GetOrders()
-        {
-            return _ctx.orders;
-        }
+       
     }
 }

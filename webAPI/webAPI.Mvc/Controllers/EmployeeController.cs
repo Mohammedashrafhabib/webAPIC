@@ -46,14 +46,14 @@ namespace webAPI.Mvc.Controllers
             //                  select e;
             return View(model);
         }
-        //[HttpPost]
-        //[Route("/addemployee")]
-        //public IActionResult Index(int reptts, string name)
-        //{
-        //    Employee employee = new Employee { ReprotsTo = reptts, Name = name };
-        //    _employeeService.addEmployee(employee);
-        //    return View();
-        //}
+        [HttpPost]
+        [Route("/addemployee")]
+        public IActionResult Index(int reptts, string name)
+        {
+            Employee employee = new Employee { ReprotsTo = reptts, Name = name };
+            _employeeService.addEmployee(employee);
+            return View();
+        }
     }
 }
 

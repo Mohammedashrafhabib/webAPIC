@@ -2,10 +2,9 @@
 
 namespace webAPI.Domain.Interfaces
 {
-    public interface IEmployeeRepository
+    public interface IEmployeeRepository : IRepository<Employee>
     {
-        IEnumerable<Employee> GetEmployees();
-        void AddEmployees(Employee employee);
+      
         IEnumerable<Employee> GetEmployeesByLevel();
     }
 }

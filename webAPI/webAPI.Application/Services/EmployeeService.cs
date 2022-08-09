@@ -8,21 +8,24 @@ namespace webAPI.Application.Services
     public class EmployeeService : IEmployeeService
     {
         private IEmployeeRepository _employeeRepository;
-        public EmployeeService(IEmployeeRepository repository)
+        private IUnitOfWork _unitOfWork;
+        public EmployeeService(IEmployeeRepository repository, IUnitOfWork unitOfWork)
         {
             _employeeRepository = repository;
+            _unitOfWork = unitOfWork;
         }
 
         public void addEmployee(Employee employee)
         {
-            _employeeRepository.AddEmployees(employee);
+            _employeeRepository.Add(employee);
+            _unitOfWork.complete();
         }
 
         public EmployeeViewModel GetEmployee()
         {
             return new EmployeeViewModel()
             {
-                employees = _employeeRepository.GetEmployees()
+                employees = _employeeRepository.GetAll()
             };
         }
 

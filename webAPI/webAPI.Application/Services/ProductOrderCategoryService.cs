@@ -14,12 +14,12 @@ namespace webAPI.Application.Services
     {
        
         private IProductRepository _productRepository;
-
-        public ProductOrderCategoryService(IProductRepository productRepository)
+        private IUnitOfWork _unitOfWork;
+        public ProductOrderCategoryService(IProductRepository productRepository, IUnitOfWork unitOfWork)
         {
-            
+
             _productRepository = productRepository;
-            
+            _unitOfWork = unitOfWork;
         }
         public ProductOrderCategoryVeiwModel GetProduct()
         {

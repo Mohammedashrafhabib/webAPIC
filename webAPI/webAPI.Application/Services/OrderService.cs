@@ -7,15 +7,17 @@ namespace webAPI.Application.Services
     public class OrderService : IOrderService
     {
         private IOrderRepository _ordersRepository;
-        public OrderService(IOrderRepository repository)
+        private IUnitOfWork _unitOfWork;
+        public OrderService(IOrderRepository repository, IUnitOfWork unitOfWork)
         {
             _ordersRepository = repository;
+            _unitOfWork = unitOfWork;
         }
         public OrdersViewModel GetOrders()
         {
             return new OrdersViewModel()
             {
-                orders = _ordersRepository.GetOrders()
+                orders = _ordersRepository.GetAll()
             };
         }
     }

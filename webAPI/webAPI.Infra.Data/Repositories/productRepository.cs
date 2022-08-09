@@ -12,17 +12,14 @@ using webAPI.Infra.Data.Context;
 
 namespace webAPI.Infra.Data.Repositories
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository : Repository<Product>, IProductRepository
     {
         private CompanyDBContext _ctx;
-        public ProductRepository(CompanyDBContext context)
+        public ProductRepository(CompanyDBContext context):base(context)
         {
             _ctx = context;
         }
-        public IEnumerable<Product> GetProducts()
-        {
-            return _ctx.products;
-        }
+      
 
         public IEnumerable<ProductOrderCategory> GetProductsOrderCategory()
         {

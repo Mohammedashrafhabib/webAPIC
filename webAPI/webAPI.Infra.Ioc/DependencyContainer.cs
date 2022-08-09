@@ -8,6 +8,7 @@ using webAPI.Application.Interfaces;
 using webAPI.Application.Services;
 using webAPI.Domain.Interfaces;
 using webAPI.Infra.Data.Repositories;
+using webAPI.Infra.Data.UnitOfWork;
 
 namespace webAPI.Infra.Ioc
 {
@@ -29,6 +30,8 @@ namespace webAPI.Infra.Ioc
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+          //  services.AddScoped<IRepository<>, Repository<>>();
         }
     }
 }

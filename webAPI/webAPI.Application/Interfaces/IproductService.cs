@@ -11,5 +11,6 @@ namespace webAPI.Application.Interfaces
     public interface IProductService
     {
         ProductViewModel GetProducts();
+        void AddProducts(Product product);
     }
 }

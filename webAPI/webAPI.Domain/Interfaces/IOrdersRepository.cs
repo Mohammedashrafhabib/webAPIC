@@ -2,8 +2,8 @@
 
 namespace webAPI.Domain.Interfaces
 {
-    public interface IOrderRepository
+    public interface IOrderRepository : IRepository<Order>
     {
-        IEnumerable<Order> GetOrders();
+      
     }
 }

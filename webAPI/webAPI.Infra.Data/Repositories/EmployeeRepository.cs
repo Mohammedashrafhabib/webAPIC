@@ -7,25 +7,15 @@ using webAPI.Infra.Data.Context;
 
 namespace webAPI.Infra.Data.Repositories
 {
-    public class EmployeeRepository : IEmployeeRepository
+    public class EmployeeRepository : Repository<Employee>,IEmployeeRepository
     {
         private CompanyDBContext _ctx;
-        public EmployeeRepository(CompanyDBContext context)
+        public EmployeeRepository(CompanyDBContext context):base(context)
         {
             _ctx = context;
         }
 
-        public void AddEmployees(Employee employee)
-        {
-            _ctx.employees.Add(employee);
-            _ctx.SaveChanges();
-        }
-
-        public IEnumerable<Employee> GetEmployees()
-        {
-
-            return _ctx.employees;
-        }
+      
 
         public IEnumerable<Employee> GetEmployeesByLevel()
         {
