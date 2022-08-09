@@ -21,7 +21,8 @@ namespace webAPI.Infra.Data.Repositories
 
         public Building GetBuilding(int id)
         {
-            throw new NotImplementedException();
+            //var buildingID=_ctx.flats.AsQueryable().Where(x=>x.FlatID==id).First().Building;
+            return _ctx.flats.AsQueryable().Where(x => x.FlatID == id).First().Building;
         }
 
        

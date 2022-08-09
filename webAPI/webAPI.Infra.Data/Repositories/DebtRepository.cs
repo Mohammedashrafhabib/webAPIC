@@ -19,12 +19,13 @@ namespace webAPI.Infra.Data.Repositories
 
         public IEnumerable<Debt> GetAllFlatDebt(int id)
         {
-            throw new NotImplementedException();
+           
+            return _ctx.debts.AsQueryable().Where(x=>x.FlatID == id);
         }
 
         public IEnumerable<Debt> GetDueDebts(int id)
         {
-            throw new NotImplementedException();
+            return _ctx.debts.AsQueryable().Where(x => (x.FlatID == id)&&x.IsDue==true);
         }
     }
 }

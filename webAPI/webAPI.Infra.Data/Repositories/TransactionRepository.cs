@@ -20,12 +20,12 @@ namespace webAPI.Infra.Data.Repositories
 
         public IEnumerable<Transactions> GetBuildingTransactions(int id)
         {
-            throw new NotImplementedException();
+            return _ctx.transactions.AsQueryable().Where(x=>(x.BuildingID == id)&&(x.DebtID==null)&&(x.FlatID==null));
         }
 
         public IEnumerable<Transactions> GetFlatTransactions(int id)
         {
-            throw new NotImplementedException();
+            return _ctx.transactions.AsQueryable().Where(x => x.FlatID == id);
         }
 
       
