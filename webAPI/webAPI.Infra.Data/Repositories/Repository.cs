@@ -11,8 +11,8 @@ namespace webAPI.Infra.Data.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private CompanyDBContext _ctx;
-        public Repository(CompanyDBContext context)
+        private BuildingsDBContext _ctx;
+        public Repository(BuildingsDBContext context)
         {
             _ctx = context;
         }
@@ -29,7 +29,7 @@ namespace webAPI.Infra.Data.Repositories
 
         public IEnumerable<T> GetAll()
         {
-            return _ctx.Set<T>().ToList();
+            return _ctx.Set<T>();
         }
 
         public void Remove(T entity)

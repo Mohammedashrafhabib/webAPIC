@@ -12,9 +12,9 @@ namespace webAPI.Infra.Data.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private  CompanyDBContext _ctx;
+        private  BuildingsDBContext _ctx;
 
-        public UnitOfWork(CompanyDBContext ctx)
+        public UnitOfWork(BuildingsDBContext ctx)
         {
             _ctx = ctx;
 

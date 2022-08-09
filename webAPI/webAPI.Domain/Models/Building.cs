@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace webAPI.Domain.Models
 {
-    internal class Building
+    public class Building
     {
+        
+        public int BuildingID { get; set; }
+        public int Safe { get; set; }
     }
 }
