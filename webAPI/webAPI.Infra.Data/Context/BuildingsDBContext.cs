@@ -16,6 +16,6 @@ namespace webAPI.Infra.Data.Context
         public DbSet<Building> buildings { get; set; }
         public DbSet<Flat> flats { get; set; }
         public DbSet<Debt> debts { get; set; }
-        public DbSet<Transactions> transactions { get; set; }
+        public DbSet<Transaction> transactions { get; set; }
     }
 }

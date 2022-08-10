@@ -5,40 +5,51 @@ using System.Text;
 using System.Threading.Tasks;
 using webAPI.Application.Interfaces;
 using webAPI.Application.ViewModels;
+using webAPI.Domain.Interfaces;
 using webAPI.Domain.Models;
 
 namespace webAPI.Application.Services
 {
     public class FlatService : IFlatService
     {
+        private readonly IFlatRepository _flatRepository;
+        private readonly IUnitOfWork _unitOfWork;
+        public FlatService(IFlatRepository flatRepository, IUnitOfWork unitOfWork)
+        {
+            _flatRepository = flatRepository;
+            _unitOfWork = unitOfWork;
+        }
         public void AddFlat(Flat Flat)
         {
-            throw new NotImplementedException();
+            _flatRepository.Add(Flat);
+            _unitOfWork.complete();
         }
 
         public FlatViewModel GetAllFlats()
         {
-            throw new NotImplementedException();
+            return new FlatViewModel() { flats = _flatRepository.GetAll() };
         }
 
         public Building GetBuilding(int id)
         {
-            throw new NotImplementedException();
+            return _flatRepository.GetBuilding(id);
         }
 
         public Flat GetFlat(int FlatId)
         {
-            throw new NotImplementedException();
+            return _flatRepository.Find(e => e.FlatID == FlatId).First();
         }
 
         public void RemoveFlat(Flat Flat)
         {
-            throw new NotImplementedException();
+            _flatRepository.Remove(Flat);
+            _unitOfWork.complete();
         }
 
         public void UpdateFlat(Flat Flat)
         {
-            throw new NotImplementedException();
+            _flatRepository.update(Flat);
+            _unitOfWork.complete();
         }
     }
 }

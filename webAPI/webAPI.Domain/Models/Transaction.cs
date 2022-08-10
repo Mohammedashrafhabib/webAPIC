@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace webAPI.Domain.Models
 {
-    public class Transactions
+    public class Transaction
     {
         public int ID { get; set; }
         public Boolean Dept_or_Payment { get; set; }

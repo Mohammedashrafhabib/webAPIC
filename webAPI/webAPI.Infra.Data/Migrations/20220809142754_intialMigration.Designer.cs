@@ -84,7 +84,7 @@ namespace webAPI.Infra.Data.Migrations
                     b.ToTable("flats");
                 });
 
-            modelBuilder.Entity("webAPI.Domain.Models.Transactions", b =>
+            modelBuilder.Entity("webAPI.Domain.Models.Transaction", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -140,7 +140,7 @@ namespace webAPI.Infra.Data.Migrations
                     b.Navigation("Building");
                 });
 
-            modelBuilder.Entity("webAPI.Domain.Models.Transactions", b =>
+            modelBuilder.Entity("webAPI.Domain.Models.Transaction", b =>
                 {
                     b.HasOne("webAPI.Domain.Models.Building", "Building")
                         .WithMany()

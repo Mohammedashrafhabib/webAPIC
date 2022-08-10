@@ -10,7 +10,7 @@ using webAPI.Infra.Data.Context;
 
 namespace webAPI.Infra.Data.Repositories
 {
-    public class TransactionRepository : Repository<Transactions>,ITransactionRepository
+    public class TransactionRepository : Repository<Transaction>,ITransactionRepository
     {
         private BuildingsDBContext _ctx;
         public TransactionRepository(BuildingsDBContext context) : base(context)
@@ -18,12 +18,12 @@ namespace webAPI.Infra.Data.Repositories
             _ctx = context;
         }
 
-        public IEnumerable<Transactions> GetBuildingTransactions(int id)
+        public IEnumerable<Transaction> GetBuildingTransactions(int id)
         {
             return _ctx.transactions.AsQueryable().Where(x=>(x.BuildingID == id)&&(x.DebtID==null)&&(x.FlatID==null));
         }
 
-        public IEnumerable<Transactions> GetFlatTransactions(int id)
+        public IEnumerable<Transaction> GetFlatTransactions(int id)
         {
             return _ctx.transactions.AsQueryable().Where(x => x.FlatID == id);
         }

@@ -13,7 +13,7 @@ namespace webAPI.Domain.Interfaces
         void Add(Tentity entity);
         IEnumerable<Tentity> Find(Expression<Func<Tentity, bool>> expression);
        void Remove(Tentity entity);
-
+        public void update(Tentity entity);
 
     }
 }

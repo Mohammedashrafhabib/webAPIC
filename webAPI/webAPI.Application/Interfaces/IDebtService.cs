@@ -13,7 +13,7 @@ namespace webAPI.Application.Interfaces
         public void AddDebt(Debt debt);
         public void RemoveDebt(int debtId);
         public DebtViewModel GetAllDebts();
-        public Debt GetDebt(int buildingId);
+        public Debt GetDebt(int debtId);
         public void UpdateDebt(Debt debt);
         public DebtViewModel GetAllFlatDebt(int id);
 

@@ -10,11 +10,11 @@ namespace webAPI.Application.Interfaces
 {
     public interface ITransactionService
     {
-        public void AddTransaction(Transactions transaction);
+        public void AddTransaction(Transaction transaction);
         public void RemoveTransaction(int transactionid);
         public TransactionViewModel GetAllTransactions();
-        public Transactions GetTransaction(int transactionid);
-        public void UpdateTransaction(Transactions transaction);
+        public Transaction GetTransaction(int transactionid);
+        public void UpdateTransaction(Transaction transaction);
         public TransactionViewModel GetBuildingTransactions(int id);
         public TransactionViewModel GetFlatTransactions(int id);
     }

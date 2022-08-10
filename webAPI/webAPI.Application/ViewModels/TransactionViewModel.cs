@@ -9,6 +9,6 @@ namespace webAPI.Application.ViewModels
 {
     public class TransactionViewModel
     {
-       public IEnumerable<Transactions> Transactions { get; set; }
+       public IEnumerable<Transaction> Transactions { get; set; }
     }
 }

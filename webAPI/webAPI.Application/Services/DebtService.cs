@@ -5,80 +5,65 @@ using System.Text;
 using System.Threading.Tasks;
 using webAPI.Application.Interfaces;
 using webAPI.Application.ViewModels;
+using webAPI.Domain.Interfaces;
 using webAPI.Domain.Models;
 
 namespace webAPI.Application.Services
 {
     public class DebtService : IDebtService
     {
-        public void AddDebt(Debt debt)
+        private readonly IDebtRepository _debtRepository;
+        private readonly IUnitOfWork _unitOfWork;
+        public DebtService(IDebtRepository debtRepository, IUnitOfWork unitOfWork)
         {
-            throw new NotImplementedException();
+            _debtRepository = debtRepository;
+            _unitOfWork = unitOfWork;
         }
 
-        public void AddTransaction(Transactions transaction)
+        public void AddDebt(Debt debt)
         {
-            throw new NotImplementedException();
+            _debtRepository.Add(debt);
+            _unitOfWork.complete();
         }
+
+       
 
         public DebtViewModel GetAllDebts()
         {
-            throw new NotImplementedException();
+           return new DebtViewModel() { Debts = _debtRepository.GetAll() };
         }
 
         public DebtViewModel GetAllFlatDebt(int id)
         {
-            throw new NotImplementedException();
+            return new DebtViewModel() { Debts = _debtRepository.GetAllFlatDebt(id) };
         }
 
-        public TransactionViewModel GetAllTransactions()
-        {
-            throw new NotImplementedException();
-        }
+        
 
-        public TransactionViewModel GetBuildingTransactions(int id)
+        public Debt GetDebt(int debtId)
         {
-            throw new NotImplementedException();
-        }
-
-        public Debt GetDebt(int buildingId)
-        {
-            throw new NotImplementedException();
+            return _debtRepository.Find(x => x.DebtID == debtId).First();
         }
 
         public DebtViewModel GetDueDebts(int id)
         {
-            throw new NotImplementedException();
+            return new DebtViewModel() { Debts = _debtRepository.GetDueDebts(id) };
         }
 
-        public TransactionViewModel GetFlatTransactions(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Transactions GetTransaction(int transactionid)
-        {
-            throw new NotImplementedException();
-        }
 
         public void RemoveDebt(int debtId)
         {
-            throw new NotImplementedException();
+           _debtRepository.Remove(GetDebt(debtId));
+            _unitOfWork.complete();
         }
 
-        public void RemoveTransaction(int transactionid)
-        {
-            throw new NotImplementedException();
-        }
-
+     
         public void UpdateDebt(Debt debt)
         {
-            throw new NotImplementedException();
+            _debtRepository.update(debt);
+            _unitOfWork.complete();
         }
 
-        public void UpdateTransaction(Transactions transaction)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

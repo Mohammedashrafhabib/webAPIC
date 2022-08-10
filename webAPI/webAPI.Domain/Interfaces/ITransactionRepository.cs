@@ -7,10 +7,10 @@ using webAPI.Domain.Models;
 
 namespace webAPI.Domain.Interfaces
 {
-    public interface ITransactionRepository: IRepository<Transactions>
+    public interface ITransactionRepository: IRepository<Transaction>
     {
-        IEnumerable<Transactions> GetBuildingTransactions(int id);
-        IEnumerable<Transactions> GetFlatTransactions(int id);
+        IEnumerable<Transaction> GetBuildingTransactions(int id);
+        IEnumerable<Transaction> GetFlatTransactions(int id);
         
     }
 }

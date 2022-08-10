@@ -36,5 +36,9 @@ namespace webAPI.Infra.Data.Repositories
         {
             _ctx.Set<T>().Remove(entity);
         }
+        public void update(T entity)
+        {
+            _ctx.Update(entity);
+        }
     }
 }
